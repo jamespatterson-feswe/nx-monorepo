@@ -1,0 +1,59 @@
+{
+  "ignorePatterns": [
+    "node_modules/",
+    "dist/",
+    "coverage/",
+    ".husky/",
+    ".nx/",
+    "out/",
+    "tmp/",
+    "**/*.min.js",
+    "**/*.min.ts",
+    "**/generated/**",
+    "**/build/**"
+  ],
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "no-var": "error", // Enforce let/const instead of var
+    "prefer-const": "error", // Suggest using const when variables are not reassigned
+    "eqeqeq": ["error", "always"], // Require === and !== instead of == and !=
+    "no-console": "warn", // Warns against console logs (useful for production)
+    "no-debugger": "error", // Disallows using the debugger statement
+    "curly": "error", // Requires curly braces around blocks
+    "arrow-body-style": ["error", "as-needed"], // Enforce cleaner arrow function syntax
+    "prefer-arrow-callback": "error", // Prefer arrow functions in callbacks
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }], // Warns about unused variables
+    "no-multiple-empty-lines": ["warn", { "max": 1 }], // Restricts excessive empty lines
+    "no-trailing-spaces": "error", // Removes unnecessary whitespace
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/explicit-function-return-type": "warn",
+    "@typescript-eslint/no-non-null-assertion": "error",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { "argsIgnorePattern": "^_" }
+    ],
+    "object-shorthand": ["error", "always"], // Enforce `{ key }` instead of `{ key: key }`
+    "prefer-template": "error", // Enforce template literals instead of string concatenation
+    "no-duplicate-imports": "error", // Prevents importing the same module multiple times
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal"],
+        "alphabetize": { "order": "asc", "caseInsensitive": true }
+      }
+    ],
+    "import/no-cycle": "error", // Prevents circular dependencies
+    "import/no-extraneous-dependencies": "error" // Ensures all imports are in package.json
+  }
+}
