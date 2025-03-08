@@ -2,7 +2,17 @@
   "name": "@workspace/source",
   "version": "0.0.1",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "prettier": "prettier --write ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,ts,jsx,tsx,json,css,scss,md}": "prettier --write"
+  },
   "private": true,
   "dependencies": {
     "@angular/common": "~19.2.0",
