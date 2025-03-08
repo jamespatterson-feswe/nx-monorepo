@@ -43,3 +43,6 @@ Thumbs.db
 
 .angular
 .cache
+
+vite.config.*.timestamp*
+vitest.config.*.timestamp*
