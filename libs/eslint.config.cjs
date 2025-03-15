@@ -1,8 +1,6 @@
 const nx = require('@nx/eslint-plugin')
-const baseConfig = require('../.eslintrc.json')
 
 module.exports = [
-  ...baseConfig,
   {
     files: ['**/*.json'],
     rules: {
