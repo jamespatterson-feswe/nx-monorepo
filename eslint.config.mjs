@@ -39,4 +39,10 @@ export default [
     // Override or add rules here
     rules: {},
   },
+  ...nx.configs['flat/react'],
+  {
+    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
+    // Override or add rules here
+    rules: {},
+  },
 ];
