@@ -33,7 +33,11 @@ jobs:
           cache: 'npm'
 
       # Install dependencies using npm
-      - run: npm ci  # Uses package-lock.json to install dependencies
+      - run: |
+          npm install @nx
+          npm install @nrwl/react@18.3.1
+          npm install @nrwl/web@19.8.4
+          npm ci
 
       - uses: nrwl/nx-set-shas@v4
 
