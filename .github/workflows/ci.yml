@@ -1,38 +1,50 @@
 name: CI
+
 on:
   push:
     branches:
-      # Change this if your primary branch is not main
-      - main
+      - master
+      - angular-portfolio
+      - react-portfolio
   pull_request:
-
-# Needed for nx-set-shas when run on the main branch
-permissions:
-  actions: read
-  contents: read
+    branches:
+      - master
+      - angular-portfolio
+      - react-portfolio
 
 jobs:
   main:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    strategy:
+      matrix:
+        app: [angular-portfolio, react-portfolio]
+
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - run: npm cache verify
+
       - uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 18
           cache: 'npm'
 
+      # Install dependencies using npm
       - run: |
           npm install nx@20.3.1
           npm install @nrwl/react@18.3.1
           npm install @nrwl/web@19.8.4
-          HUSKY_SKIP_INSTALL=1
+          npm install
           npm ci
-
-      - uses: nrwl/nx-set-shas@v4
 
       - run: npm exec nx reset
 
-      - run: npx nx-cloud record -- nx format:check --verbose
-      - run: npx nx affected -t test build --verbose
+      # Build both apps
+      - run: npm exec nx run ${{ matrix.app }}:build
+
+      # Test both apps
+      - run: npm exec nx run ${{ matrix.app }}:test --code-coverage
