@@ -31,6 +31,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          npm install @nx@20.3.1
           npm install @nrwl/react@18.3.1
           npm install @nrwl/web@19.8.4
           npm ci
