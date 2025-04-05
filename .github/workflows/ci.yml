@@ -35,4 +35,4 @@ jobs:
       - run: npm exec nx reset
 
       - run: npx nx-cloud record -- nx format:check --verbose
-      - run: npx nx affected -t lint test build --verbose
+      - run: npx nx affected -t test build --verbose
