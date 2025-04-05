@@ -4,25 +4,25 @@ This monorepo is a showcase of both Angular and React development, managed with 
 
 ## Technologies
 
-| Area                   | Tech Stack                              |
-|------------------------|-----------------------------------------|
-|` Monorepo Tooling`     | Nx v20.3.1                              |
-| `Angular App`          | Angular v19, SCSS, RxJs, Ngrx           |
-| `React App`            | React v18, Tailwind CSS, Redux          |
-| `UI Web Components`    | Web Components (Framework-agnostic)     |
+| Area                | Tech Stack                          |
+| ------------------- | ----------------------------------- |
+| ` Monorepo Tooling` | Nx v20.3.1                          |
+| `Angular App`       | Angular v19, SCSS, RxJs, Ngrx       |
+| `React App`         | React v18, Tailwind CSS, Redux      |
+| `UI Web Components` | Web Components (Framework-agnostic) |
 
 The `libs/ui-web-components` library is written using standard Web Components and can be consumed by both Angular and React apps without framework-specific dependencies.
 
 ## Development Features
 
-  - Code formatting with `Prettier`
-  - Unit testing support with `Jest`
-  - Linting with `ESLint`
-  - SCSS for Angular, Tailwind for React
-  - Shared UI components as Web Components
-  - Git hooks with lint-staged + Husky
-  - Custom Webpack configuration supported
-  - Pull request templates
+- Code formatting with `Prettier`
+- Unit testing support with `Jest`
+- Linting with `ESLint`
+- SCSS for Angular, Tailwind for React
+- Shared UI components as Web Components
+- Git hooks with lint-staged + Husky
+- Custom Webpack configuration supported
+- Pull request templates
 
 ## Getting Started
 
@@ -39,15 +39,16 @@ The `libs/ui-web-components` library is written using standard Web Components an
 
 ### libs/ui-web-components
 
-  Includes standalone Web Components to ensure seamless integration into both Angular and React apps. These components are:
-  - Framework-agnostic
-  - Reusable across both apps
-  - Ideal for consistent branding and design
+Includes standalone Web Components to ensure seamless integration into both Angular and React apps. These components are:
+
+- Framework-agnostic
+- Reusable across both apps
+- Ideal for consistent branding and design
 
 ### How the ui-web-components are used in either app:
 
-  - React: Import as regular custom elements
-  - Angular: Add CUSTOM_ELEMENTS_SCHEMA to module
+- React: Import as regular custom elements
+- Angular: Add CUSTOM_ELEMENTS_SCHEMA to module
 
 ## Future integration features
 
