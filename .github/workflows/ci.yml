@@ -38,7 +38,7 @@ jobs:
           npm install nx@20.3.1
           npm install @nrwl/react@18.3.1
           npm install @nrwl/web@19.8.4
-          npm install --legacy-peer-deps
+          npm install
           npm ci
 
       - run: npm exec nx reset
