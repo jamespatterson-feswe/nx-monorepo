@@ -43,6 +43,8 @@ jobs:
       - run: npm exec nx reset
       - run: npm exec nx cache clear
 
+      - run: npm install
+
       - uses: nrwl/nx-set-shas@v4
 
       # Lint both apps
