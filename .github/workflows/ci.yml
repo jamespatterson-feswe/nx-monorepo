@@ -2,7 +2,15 @@ name: CI
 
 on:
   push:
-    branches: ['*']
+    branches:
+      - master
+      - angular-portfolio
+      - react-portfolio
+  pull_request:
+    branches:
+      - master
+      - angular-portfolio
+      - react-portfolio
 
 jobs:
   main:
