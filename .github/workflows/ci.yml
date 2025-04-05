@@ -30,7 +30,10 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm install @nrwl/react@18.3.1
+          npm install @nrwl/web@19.8.4
+          npm ci
 
       - name: Reset Nx cache
         run: npx nx reset
