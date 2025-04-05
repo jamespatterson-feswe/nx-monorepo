@@ -1,11 +1,14 @@
 {
   "presets": [
     [
-      "@nx/react/babel",
+      "@babel/preset-env",
       {
-        "runtime": "automatic"
+        "targets": "> 0.25%, not dead"  // Optional: to configure which environments to support
       }
-    ]
+    ],
+    "@babel/preset-react",
+    "@babel/preset-typescript",
+    "@nx/react/babel"
   ],
   "plugins": []
 }

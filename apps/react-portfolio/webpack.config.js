@@ -14,15 +14,28 @@ module.exports = {
       htmlAcceptHeaders: ['text/html', 'application/xhtml+xml'],
     },
   },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+    ],
+  },
   plugins: [
     new NxAppWebpackPlugin({
-      tsConfig: './tsconfig.app.json',
+      tsConfig: join(__dirname, '../../apps/react-portfolio/tsconfig.app.json'),
       compiler: 'babel',
       main: './src/main.tsx',
       index: './src/index.html',
       baseHref: '/',
       assets: ['./src/favicon.ico', './src/assets'],
-      styles: ['./src/styles.scss'],
+      styles: [],
       outputHashing: process.env['NODE_ENV'] === 'production' ? 'all' : 'none',
       optimization: process.env['NODE_ENV'] === 'production',
     }),

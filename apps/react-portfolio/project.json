@@ -5,6 +5,23 @@
   "projectType": "application",
   "tags": [],
   "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "options": {
+        "webpackConfig": "apps/react-portfolio/webpack.config.js",
+        "outputPath": "dist/apps/react-portfolio",
+        "index": "apps/react-portfolio/src/index.html",
+        "main": "apps/react-portfolio/src/main.tsx",
+        "tsConfig": "apps/react-portfolio/tsconfig.app.json",
+        "assets": [
+          "apps/react-portfolio/src/favicon.ico",
+          "apps/react-portfolio/src/assets"
+        ],
+        "styles": [
+          "apps/react-portfolio/src/styles.scss"
+        ]
+      }
+    },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],

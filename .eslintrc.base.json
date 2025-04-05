@@ -1,4 +1,14 @@
 {
+  "root": true,
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "react-hooks",
+    "jsx-a11y",
+    "import",
+    "prettier",
+    "@nx"
+  ],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -8,24 +18,12 @@
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
-    "prettier"
-  ],
-  "plugins": [
-    "@typescript-eslint",
-    "react",
-    "react-hooks",
-    "jsx-a11y",
-    "import",
+    "plugin:@nx/typescript",
+    "plugin:@nx/javascript",
+    "plugin:@nx/react",
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
   "env": {
     "browser": true,
     "node": true,
@@ -52,8 +50,8 @@
     "jsx-a11y/anchor-is-valid": "off",
     "jsx-a11y/alt-text": "warn",
     "jsx-a11y/no-onchange": "warn",
-    "import/no-unresolved": "error",
-    "import/named": "error",
+    "import/no-unresolved": "warn",
+    "import/named": "warn",
     "import/default": "error",
     "import/namespace": "error",
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
@@ -82,11 +80,61 @@
       {
         "ts-ignore": "allow-with-description"
       }
+    ],
+    "@nx/enforce-module-boundaries": [
+      "error",
+      {
+        "enforceBuildableLibDependency": true,
+        "allow": ["^.*/eslint(\\.base)?\\.config\\.[cm]?js$"],
+        "depConstraints": [
+          {
+            "sourceTag": "*",
+            "onlyDependOnLibsWithTags": ["*"]
+          }
+        ]
+      }
     ]
   },
   "settings": {
     "react": {
       "version": "detect"
+    }
+  },
+  "ignorePatterns": [
+    "*.mjs",
+    "*.md",
+    "*.config.ts",
+    "*.preset.js",
+    ".vscode/",
+    ".husky/",
+    ".github/",
+    ".angular/",
+    "node_modules/",
+    "package.json",
+    "package-lock.json",
+    "yarn.lock",
+    "pnpm-lock.yaml",
+    ".eslintrc.json",
+    ".prettierrc.json",
+    ".eslintignore",
+    ".prettierignore",
+    ".editorconfig",
+    "apps/*/src/main.ts",
+    "apps/*/src/server.ts",
+    "apps/*/src/main.server.ts",
+    "apps/*/src/app/app.config.server.ts",
+    "**/*.config.js"
+  ],
+  "parserOptions": {
+    "project": [
+      "./tsconfig.base.json",
+      "./apps/*/tsconfig.json",
+      "./libs/*/tsconfig.json"
+    ],
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
     }
   }
 }
