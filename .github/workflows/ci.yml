@@ -13,54 +13,38 @@ on:
       - react-portfolio
 
 jobs:
-  install:
+  main:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+    timeout-minutes: 20
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+    strategy:
+      matrix:
+        app: [angular-portfolio, react-portfolio]
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - run: npm cache verify
+
+      - uses: actions/setup-node@v3
         with:
           node-version: 18
+          cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci
+      # Install dependencies using npm
+      - run: |
+          npm install nx@20.3.1
+          npm install @nrwl/react@18.3.1
+          npm install @nrwl/web@19.8.4
+          npm install
+          npm ci
 
-  prettier:
-    needs: install
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+      - run: npm exec nx reset
 
-      - name: Check Prettier formatting
-        run: npx prettier --check .
+      # Build both apps
+      - run: npm exec nx run ${{ matrix.app }}:build
 
-  lint:
-    needs: install
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Run ESLint
-        run: npx eslint "apps/**/*.{js,ts,tsx}" "libs/**/*.{js,ts,tsx}"
-
-  test:
-    needs: install
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Run Jest tests
-        run: npx jest --coverage
-
-  build:
-    needs: install
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Build Angular app
-        run: npm run build:angular # customize this command
-
-      - name: Build React app
-        run: npm run build:react # customize this too
+      # Test both apps
+      - run: npm exec nx run ${{ matrix.app }}:test --code-coverage
