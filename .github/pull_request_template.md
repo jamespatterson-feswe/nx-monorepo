@@ -1,32 +1,10 @@
-## 📝 Description
+**Description of changes**
 
-Please provide a clear and concise description of what this PR does. Include any context or relevant information.
-
----
-
-## 📸 Screenshots (if UI is updated)
-
-| Before | After |
-|--------|-------|
-| *Insert before screenshot here* | *Insert after screenshot here* |
+- Detailed summary of changes
 
 ---
 
-## 🎥 Screen Recording (if applicable)
-
-> Drop a Loom link, or attach a GIF/MP4 showing the change in action.
-
----
-
-## 🧪 Test Coverage
-
-- [ ] Code has been tested locally
-- [ ] New tests added (if necessary)
-- [ ] Coverage has not decreased
-
-> Include a link or screenshot of coverage report (if available):
-
-## ✅ Type of change
+**Type of change**
 
 - [ ] Bug fix
 - [ ] New feature
@@ -34,11 +12,28 @@ Please provide a clear and concise description of what this PR does. Include any
 - [ ] Documentation update
 - [ ] Refactor / Code cleanup
 
-## 🧪 How Has This Been Tested?
+---
 
-Please describe the tests that you ran to verify your changes.
+**Screen shots**
 
-## 📝 Checklist
+- If N/A, remove this
+
+**Screen recordings**
+
+- If N/A, remove this
+
+---
+
+**Test coverage**
+
+- [ ] New code meetings 80% minimum requirement
+- [ ] Coverage has not decreased
+
+- Screen shot of test coverage, if applicable
+
+---
+
+**All checklist items must be met**
 
 - [ ] The code follows the style guidelines of this project
 - [ ] The code is commented accordingly, as well as JS docs, particularly in hard-to-understand areas
