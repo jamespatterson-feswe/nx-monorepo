@@ -43,6 +43,8 @@ jobs:
 
       - run: npm exec nx reset
 
+      - run: npm exec nx run lint ${{ matrix.app }}
+
       # Build both apps
       - run: npm exec nx run ${{ matrix.app }}:build
 
