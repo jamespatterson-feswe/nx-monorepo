@@ -23,7 +23,12 @@ jobs:
           node-version: 20
           cache: 'npm'
 
-      - run: npm ci
+      - run: |
+          npm install nx@20.3.1
+          npm install @nrwl/react@18.3.1
+          npm install @nrwl/web@19.8.4
+          HUSKY_SKIP_INSTALL=1
+          npm ci
 
       - uses: nrwl/nx-set-shas@v4
 
