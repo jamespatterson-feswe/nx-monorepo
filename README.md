@@ -1,81 +1,73 @@
-# Workspace
+# Personal Portfolio Monorepo
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+This monorepo is a showcase of both Angular and React development, managed with [Nx](https://nx.dev) (**v20.3.1**). It contains two separate portfolio applications — one built with **Angular 19** using **SCSS**, and another built with **React 18** using **Tailwind CSS** — as well as a shared, framework-agnostic **UI Web Components library** that is used in both projects.
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.
+---
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+## Technologies
 
-## Finish your CI setup
+| Area                   | Tech Stack                              |
+|------------------------|-----------------------------------------|
+|` Monorepo Tooling`     | Nx v20.3.1                              |
+| `Angular App`          | Angular v19, SCSS, RxJs, Ngrx           |
+| `React App`            | React v18, Tailwind CSS, Redux          |
+| `UI Web Components`    | Web Components (Framework-agnostic)     |
 
-[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/83z86w55wA)
+The `libs/ui-web-components` library is written using standard Web Components and can be consumed by both Angular and React apps without framework-specific dependencies.
 
-## Run tasks
+---
 
-To run the dev server for your app, use:
+## Development Features
 
-```sh
-npx nx serve angular-portfolio
-```
+  - Code formatting with `Prettier`
+  - Unit testing support with `Jest`
+  - Linting with `ESLint`
+  - SCSS for Angular, Tailwind for React
+  - Shared UI components as Web Components
+  - Git hooks with lint-staged + Husky
+  - Custom Webpack configuration supported
+  - Pull request templates
 
-To create a production bundle:
+## Getting Started
 
-```sh
-npx nx build angular-portfolio
-```
+### Install Dependencies
 
-To see all available targets to run for a project, run:
+- npm install
 
-```sh
-npx nx show project angular-portfolio
-```
+---
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+## Commands
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- nx serve react-portfolio
+- nx serve angular-portfolio
 
-## Add new projects
+---
 
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
+## The shared UI library
 
-Use the plugin's generator to create new projects.
+### libs/ui-web-components
 
-To generate a new application, use:
+  Includes standalone Web Components to ensure seamless integration into both Angular and React apps. These components are:
+  - Framework-agnostic
+  - Reusable across both apps
+  - Ideal for consistent branding and design
 
-```sh
-npx nx g @nx/angular:app demo
-```
+---
 
-To generate a new library, use:
+### How the ui-web-components are used in either app:
 
-```sh
-npx nx g @nx/angular:lib mylib
-```
+  - React: Import as regular custom elements
+  - Angular: Add CUSTOM_ELEMENTS_SCHEMA to module
 
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
+---
 
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+## Future integration features
 
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Install Nx Console
-
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- Add `storybook` for ui-web-components
+- Set up e2e tests
+  - Angular: `playwrite`
+  - React: `cypress`
+  - Library: `selenium` (possibly)
+- Integrate CI/CD with `Github Actions` or `Vercel`
+- Add internationalization (`i18n`) support
+- Improve documentation and DX
