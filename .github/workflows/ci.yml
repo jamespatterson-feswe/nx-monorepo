@@ -1,19 +1,11 @@
-name: CI Checks
+name: CI
 
 on:
   push:
-    branches:
-      - master
-      - angular-portfolio
-      - react-portfolio
-  pull_request:
-    branches:
-      - master
-      - angular-portfolio
-      - react-portfolio
+    branches: ['*']
 
 jobs:
-  lint-build-test:
+  main:
     runs-on: ubuntu-latest
 
     strategy:
@@ -21,35 +13,28 @@ jobs:
         app: [angular-portfolio, react-portfolio]
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
         with:
-          node-version: 18
+          fetch-depth: 0
 
-      - name: Install dependencies
-        run: |
-          npm install @nx@20.3.1
-          npm install @nrwl/react@18.3.1
-          npm install @nrwl/web@19.8.4
-          npm ci
-
-      - name: Reset Nx cache
-        run: npx nx reset
-
-      - name: Lint ${{ matrix.app }}
-        run: npx nx lint ${{ matrix.app }} --verbose
-
-      - name: Build ${{ matrix.app }}
-        run: npx nx build ${{ matrix.app }}
-
-      - name: Test ${{ matrix.app }} with coverage
-        run: npx nx test ${{ matrix.app }} --code-coverage
-
-      - name: Upload coverage report
-        uses: actions/upload-artifact@v4
+      - uses: pnpm/action-setup@v4
         with:
-          name: coverage-${{ matrix.app }}
-          path: coverage/${{ matrix.app }}
+          version: 9
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - run: pnpm install --frozen-lockfile
+
+      - uses: nrwl/nx-set-shas@v4
+
+      # Lint both apps
+      - run: pnpm exec nx run ${{ matrix.app }}:lint
+
+      # Build both apps
+      - run: pnpm exec nx run ${{ matrix.app }}:build
+
+      # Test both apps
+      - run: pnpm exec nx run ${{ matrix.app }}:test --code-coverage
