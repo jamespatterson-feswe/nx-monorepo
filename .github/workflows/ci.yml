@@ -39,6 +39,9 @@ jobs:
           npm install @nrwl/web@19.8.4
           npm ci
 
+      - run: npm exec nx reset
+      - run: npm exec nx cache clear
+
       - uses: nrwl/nx-set-shas@v4
 
       # Lint both apps
