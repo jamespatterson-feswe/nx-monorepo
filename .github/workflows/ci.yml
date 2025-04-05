@@ -25,24 +25,21 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9
-
       - uses: actions/setup-node@v3
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: 'npm'
 
-      - run: pnpm install --frozen-lockfile
+      # Install dependencies using npm
+      - run: npm ci  # Uses package-lock.json to install dependencies
 
       - uses: nrwl/nx-set-shas@v4
 
       # Lint both apps
-      - run: pnpm exec nx run ${{ matrix.app }}:lint
+      - run: npm exec nx run ${{ matrix.app }}:lint
 
       # Build both apps
-      - run: pnpm exec nx run ${{ matrix.app }}:build
+      - run: npm exec nx run ${{ matrix.app }}:build
 
       # Test both apps
-      - run: pnpm exec nx run ${{ matrix.app }}:test --code-coverage
+      - run: npm exec nx run ${{ matrix.app }}:test --code-coverage
