@@ -1,0 +1,26 @@
+*.mjs
+*.md
+*.config.ts
+*.preset.js
+
+# Ignore .vscode, .husky, .github directories
+.vscode/
+.husky/
+.github/
+.angular/
+
+# Ignore node_modules
+node_modules/
+
+# Ignore all package files
+package.json
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Ignore any ignore files (e.g. .eslintignore, .prettierignore, etc.)
+.eslintrc.json
+.prettierrc.json
+.eslintignore
+.prettierignore
+.editorconfig

@@ -1,5 +1,5 @@
 export default {
-  preset: './jest.preset.js',  // This can be the same as a shared preset for all apps
+  preset: './jest.preset.js', // This can be the same as a shared preset for all apps
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'], // Global test setup (if you use it)
   coverageDirectory: '<rootDir>/coverage', // Shared coverage directory
   testMatch: [

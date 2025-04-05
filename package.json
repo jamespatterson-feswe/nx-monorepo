@@ -8,7 +8,8 @@
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
-      "eslint --fix --quiet=true"
+      "eslint --fix --quiet=true",
+      "prettier --write"
     ]
   },
   "dependencies": {
