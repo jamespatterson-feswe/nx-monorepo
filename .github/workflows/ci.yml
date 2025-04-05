@@ -36,7 +36,7 @@ jobs:
         run: npx nx reset
 
       - name: Lint ${{ matrix.app }}
-        run: npx nx lint ${{ matrix.app }}
+        run: npx nx lint ${{ matrix.app }} --verbose
 
       - name: Build ${{ matrix.app }}
         run: npx nx build ${{ matrix.app }}
