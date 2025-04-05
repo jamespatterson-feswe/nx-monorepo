@@ -39,6 +39,7 @@ jobs:
           npm install @nrwl/react@18.3.1
           npm install @nrwl/web@19.8.4
           npm install
+          HUSKY_SKIP_INSTALL=1
           npm ci
 
       - run: npm exec nx reset
