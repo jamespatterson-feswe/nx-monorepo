@@ -25,7 +25,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - run: npm cache clean
+      - run: npm cache verify
 
       - uses: actions/setup-node@v3
         with:
