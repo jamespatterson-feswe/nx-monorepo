@@ -24,3 +24,7 @@ pnpm-lock.yaml
 .eslintignore
 .prettierignore
 .editorconfig
+apps/*/src/main.ts
+apps/*/src/server.ts
+apps/*/src/main.server.ts
+apps/*/src/app/app.config.server.ts
