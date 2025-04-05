@@ -2,8 +2,6 @@
 
 This monorepo is a showcase of both Angular and React development, managed with [Nx](https://nx.dev) (**v20.3.1**). It contains two separate portfolio applications — one built with **Angular 19** using **SCSS**, and another built with **React 18** using **Tailwind CSS** — as well as a shared, framework-agnostic **UI Web Components library** that is used in both projects.
 
----
-
 ## Technologies
 
 | Area                   | Tech Stack                              |
@@ -14,8 +12,6 @@ This monorepo is a showcase of both Angular and React development, managed with 
 | `UI Web Components`    | Web Components (Framework-agnostic)     |
 
 The `libs/ui-web-components` library is written using standard Web Components and can be consumed by both Angular and React apps without framework-specific dependencies.
-
----
 
 ## Development Features
 
@@ -34,14 +30,10 @@ The `libs/ui-web-components` library is written using standard Web Components an
 
 - npm install
 
----
-
 ## Commands
 
 - nx serve react-portfolio
 - nx serve angular-portfolio
-
----
 
 ## The shared UI library
 
@@ -52,14 +44,10 @@ The `libs/ui-web-components` library is written using standard Web Components an
   - Reusable across both apps
   - Ideal for consistent branding and design
 
----
-
 ### How the ui-web-components are used in either app:
 
   - React: Import as regular custom elements
   - Angular: Add CUSTOM_ELEMENTS_SCHEMA to module
-
----
 
 ## Future integration features
 
