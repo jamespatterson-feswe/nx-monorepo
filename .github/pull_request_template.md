@@ -42,6 +42,6 @@ Please describe the tests that you ran to verify your changes.
 
 - [ ] The code follows the style guidelines of this project
 - [ ] The code is commented accordingly, as well as JS docs, particularly in hard-to-understand areas
-- [ ] Corresponding changes to the documentation have been made (if necessary)
+- [ ] The corresponding changes to the documentation have been made (if necessary)
 - [ ] The changes generate no new warnings or errors
 - [ ] The code meets the minimum requirements of code coverage, which is 80%
