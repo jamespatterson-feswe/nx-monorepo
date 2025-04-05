@@ -1,10 +1,14 @@
 {
   "name": "@workspace/source",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "license": "MIT",
   "scripts": {
-    "prepare": "husky"
+    "prepare": "husky",
+    "angular": "nx serve angular-portfolio",
+    "react": "nx serve react-portfolio",
+    "test:angular": "nx test angular-portfolio",
+    "test:react": "nx test react-portfolio"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
