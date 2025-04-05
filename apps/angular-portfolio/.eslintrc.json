@@ -1,0 +1,14 @@
+{
+  "extends": ["../../.eslintrc.base.json"],
+  "ignorePatterns": ["!**/*", "*.scss"],
+  "plugins": ["html"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "parserOptions": {
+        "project": ["apps/angular-portfolio/tsconfig.*?.json"]
+      },
+      "rules": {}
+    }
+  ]
+}

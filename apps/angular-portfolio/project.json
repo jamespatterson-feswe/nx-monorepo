@@ -73,7 +73,14 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint"
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/angular-portfolio/src/**/*.ts",
+          "apps/angular-portfolio/src/**/*.html",
+          "apps/angular-portfolio/src/**/*.scss"
+        ]
+      }
     },
     "test": {
       "executor": "@nx/jest:jest",
