@@ -28,6 +28,7 @@
 
 - [ ] New code meetings 80% minimum requirement
 - [ ] Coverage has not decreased
+- [ ] Initial commit
 
 - Screen shot of test coverage, if applicable
 
