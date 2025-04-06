@@ -17,9 +17,7 @@
           "apps/react-portfolio/src/favicon.ico",
           "apps/react-portfolio/src/assets"
         ],
-        "styles": [
-          "apps/react-portfolio/src/styles.scss"
-        ]
+        "styles": ["apps/react-portfolio/src/styles.scss"]
       }
     },
     "test": {

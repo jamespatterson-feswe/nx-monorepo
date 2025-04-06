@@ -3,7 +3,7 @@
     [
       "@babel/preset-env",
       {
-        "targets": "> 0.25%, not dead"  // Optional: to configure which environments to support
+        "targets": "> 0.25%, not dead" // Optional: to configure which environments to support
       }
     ],
     "@babel/preset-react",

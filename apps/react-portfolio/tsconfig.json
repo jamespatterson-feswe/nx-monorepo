@@ -14,18 +14,9 @@
     "declaration": true,
     "types": ["jest", "node"]
   },
-  "files": [],  // No need to explicitly define files unless necessary
-  "include": [
-    "src/**/*",
-    "tsconfig.json",
-    "*.spec.tsx"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "build",
-    "**/*.config.js"
-  ],
+  "files": [], // No need to explicitly define files unless necessary
+  "include": ["src/**/*", "tsconfig.json", "*.spec.tsx"],
+  "exclude": ["node_modules", "dist", "build", "**/*.config.js"],
   "references": [
     {
       "path": "./tsconfig.app.json"
@@ -34,5 +25,5 @@
       "path": "./tsconfig.spec.json"
     }
   ],
-  "extends": "../../tsconfig.base.json"  // Ensure this path is correct
+  "extends": "../../tsconfig.base.json" // Ensure this path is correct
 }
