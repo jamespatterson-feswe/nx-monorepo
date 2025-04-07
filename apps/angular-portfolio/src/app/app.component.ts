@@ -1,5 +1,6 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { UiButton } from 'dist/libs/ui-web-components/src/index';
 
 @Component({
   imports: [RouterModule],
