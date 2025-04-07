@@ -1,1 +1,2 @@
-export * from './lib/ui-web-components';
+export * from './helpers/components';
+export * from './lib/index';

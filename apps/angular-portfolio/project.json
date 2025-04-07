@@ -23,7 +23,9 @@
           }
         ],
         "styles": ["apps/angular-portfolio/src/styles.scss"],
-        "scripts": [],
+        "scripts": [
+          "dist/libs/ui-web-components/src/index.js"
+        ],
         "server": "apps/angular-portfolio/src/main.server.ts",
         "ssr": {
           "entry": "apps/angular-portfolio/src/server.ts"

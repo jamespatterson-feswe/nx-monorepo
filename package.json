@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "prepare": "husky",
-    "angular": "nx serve angular-portfolio",
+    "angular": "nx build ui-web-components && nx serve angular-portfolio",
     "react": "nx serve react-portfolio",
     "test:angular": "nx test angular-portfolio",
     "test:react": "nx test react-portfolio",
@@ -14,7 +14,7 @@
     "lint:react": "nx lint react-portfolio",
     "check:angular": "nx test angular-portfolio && npx stylelint apps/angular-portfolio/src/**/*.{scss,css} && nx lint angular-portfolio",
     "check:react": "nx test react-portfolio && nx lint react-portfolio",
-    "build:angular": "nx build angular-portfolio",
+    "build:angular": "nx build ui-web-components && nx build angular-portfolio",
     "build:react": "nx build react-portfolio",
     "test:all:angular": "nx test angular-portfolio && npx stylelint apps/angular-portfolio/src/**/*.{scss,css} && nx lint angular-portfolio && nx build angular-portfolio",
     "test:all:react": "nx test react-portfolio && nx lint react-portfolio && nx build react-portfolio",
